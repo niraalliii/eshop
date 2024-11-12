@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ElectroShop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">ElectroShop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="checkout.html">Checkout <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Checkout Page Content -->
+<div class="container mt-5">
+    <h2 class="text-center">Checkout</h2>
+    <div class="row mt-4">
+        <!-- Billing Details -->
+        <div class="col-md-6">
+            <h4>Billing Details</h4>
+            <form>
+                <div class="form-group">
+                    <label for="billing-name">Full Name</label>
+                    <input type="text" class="form-control" id="billing-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="billing-email">Email Address</label>
+                    <input type="email" class="form-control" id="billing-email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="billing-address">Address</label>
+                    <input type="text" class="form-control" id="billing-address" placeholder="1234 Main St" required>
+                </div>
+                <div class="form-group">
+                    <label for="billing-city">City</label>
+                    <input type="text" class="form-control" id="billing-city" required>
+                </div>
+                <div class="form-group">
+                    <label for="billing-zip">ZIP Code</label>
+                    <input type="text" class="form-control" id="billing-zip" required>
+                </div>
+                <div class="form-group">
+                    <label for="billing-country">Country</label>
+                    <select class="form-control" id="billing-country" required>
+                        <option>United States</option>
+                        <option>Canada</option>
+                        <option>United Kingdom</option>
+                        <option>Australia</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="col-md-6">
+            <h4>Order Summary</h4>
+            <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Samsung Galaxy S21</span>
+                    <strong>$799.99</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Dell XPS 13</span>
+                    <strong>$999.99</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Sony WH-1000XM4</span>
+                    <strong>$349.99</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Shipping</span>
+                    <strong>$50.00</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total</span>
+                    <strong>$2199.97</strong>
+                </li>
+            </ul>
+
+            <!-- Payment Method -->
+            <h4>Payment</h4>
+            <form>
+                <div class="form-group">
+                    <label for="payment-method">Choose Payment Method</label>
+                    <select class="form-control" id="payment-method" required>
+                        <option>Credit/Debit Card</option>
+                        <option>PayPal</option>
+                        <option>Cash on Delivery</option>
+                    </select>
+                </div>
+                <!-- Credit Card Details (If selected) -->
+                <div id="card-details" class="d-none">
+                    <div class="form-group">
+                        <label for="card-name">Name on Card</label>
+                        <input type="text" class="form-control" id="card-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Credit Card Number</label>
+                        <input type="text" class="form-control" id="card-number" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="card-expiration">Expiration Date</label>
+                            <input type="text" class="form-control" id="card-expiration" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="card-cvv">CVV</label>
+                            <input type="text" class="form-control" id="card-cvv" required>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Place Order</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+        <p>&copy; 2024 ElectroShop. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#" class="text-white mr-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JS for Payment Method -->
+<script>
+    document.getElementById('payment-method').addEventListener('change', function() {
+        var cardDetails = document.getElementById('card-details');
+        if (this.value === 'Credit/Debit Card') {
+            cardDetails.classList.remove('d-none');
+        } else {
+            cardDetails.classList.add('d-none');
+        }
+    });
+</script>
+</body>
+</html>

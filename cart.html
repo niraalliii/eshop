@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - ElectroShop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">ElectroShop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="cart.html">Cart <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Cart Page Content -->
+<div class="container mt-5">
+    <h2 class="text-center">Your Shopping Cart</h2>
+
+    <!-- Cart Items -->
+    <div class="table-responsive mt-4">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product 1 -->
+                <tr>
+                    <td>
+                        <div class="media">
+                            <img src="https://via.placeholder.com/100x80" class="mr-3" alt="Samsung Galaxy S21">
+                            <div class="media-body">
+                                <h5 class="mt-0">Samsung Galaxy S21</h5>
+                                <p>High-quality smartphone with advanced features.</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>$799.99</td>
+                    <td>
+                        <input type="number" class="form-control" value="1" min="1" onchange="updateSubtotal(this)">
+                    </td>
+                    <td class="subtotal">$799.99</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
+                    </td>
+                </tr>
+                <!-- Product 2 -->
+                <tr>
+                    <td>
+                        <div class="media">
+                            <img src="https://via.placeholder.com/100x80" class="mr-3" alt="Dell XPS 13">
+                            <div class="media-body">
+                                <h5 class="mt-0">Dell XPS 13</h5>
+                                <p>Compact and powerful laptop for all your needs.</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>$999.99</td>
+                    <td>
+                        <input type="number" class="form-control" value="1" min="1" onchange="updateSubtotal(this)">
+                    </td>
+                    <td class="subtotal">$999.99</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
+                    </td>
+                </tr>
+                <!-- Product 3 -->
+                <tr>
+                    <td>
+                        <div class="media">
+                            <img src="https://via.placeholder.com/100x80" class="mr-3" alt="Sony WH-1000XM4">
+                            <div class="media-body">
+                                <h5 class="mt-0">Sony WH-1000XM4</h5>
+                                <p>Noise-cancelling headphones with superior sound quality.</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>$349.99</td>
+                    <td>
+                        <input type="number" class="form-control" value="1" min="1" onchange="updateSubtotal(this)">
+                    </td>
+                    <td class="subtotal">$349.99</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Cart Summary -->
+    <div class="row justify-content-end">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Order Summary</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Subtotal</span>
+                            <strong id="subtotal">$2149.97</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Shipping</span>
+                            <strong>$50.00</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total</span>
+                            <strong id="total">$2199.97</strong>
+                        </li>
+                    </ul>
+                    <a href="checkout.html" class="btn btn-primary btn-block mt-3">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+        <p>&copy; 2024 ElectroShop. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#" class="text-white mr-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JS for Cart Functionality -->
+<script>
+    function updateSubtotal(element) {
+        const row = element.closest('tr');
+        const price = parseFloat(row.querySelector('td:nth-child(2)').innerText.replace('$', ''));
+        const quantity = parseInt(element.value);
+        const subtotal = price * quantity;
+        row.querySelector('.subtotal').innerText = '$' + subtotal.toFixed(2);
+        updateTotal();
+    }
+
+    function removeItem(element) {
+        const row = element.closest('tr');
+        row.remove();
+        updateTotal();
+    }
+
+    function updateTotal() {
+        let subtotal = 0;
+        document.querySelectorAll('.subtotal').forEach(function(item) {
+            subtotal += parseFloat(item.innerText.replace('$', ''));
+        });
+        const shipping = 50.00;
+        const total = subtotal + shipping;
+        document.getElementById('subtotal').innerText = '$' + subtotal.toFixed(2);
+        document.getElementById('total').innerText = '$' + total.toFixed(2);
+    }
+</script>
+</body>
+</html>
